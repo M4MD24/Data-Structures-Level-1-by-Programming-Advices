@@ -2,3 +2,4 @@
 
 1. Concepts
    1. What is Data Structure? and Why?
+   2. Data Structures (DS) vs Database (DB)
