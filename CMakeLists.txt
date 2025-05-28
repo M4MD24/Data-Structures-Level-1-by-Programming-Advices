@@ -1,3 +1,3 @@
 cmake_minimum_required(VERSION 3.31)
-project(Date_Structures_Level_1_by_Programming_Advices)
+project(Data_Structures_Level_1_by_Programming_Advices)
 set(CMAKE_CXX_STANDARD 26)
