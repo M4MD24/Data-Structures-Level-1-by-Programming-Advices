@@ -6,6 +6,12 @@ class Node {
     Node *next = nullptr;
 
 public:
+    Node(
+        const type &VALUE
+    ) {
+        value = VALUE;
+    }
+
     void setValue(
         const type &VALUE
     ) {

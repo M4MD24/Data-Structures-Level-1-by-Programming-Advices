@@ -1,55 +1,34 @@
 #include <iostream>
 #include "singly_linked_list/Node.h"
+#include "singly_linked_list/SinglyLinkedList.h"
 using namespace std;
 
-void printValues(
-    Node<short> *head
-) {
-    cout << "Nodes Values: ";
-    while (head != nullptr) {
-        cout << head->getValue() << ' ';
-        head = head->getNext();
-    }
-}
-
 int main() {
-    Node<short> *head = nullptr,
-                *firstNode = nullptr,
-                *secondNode = nullptr,
-                *thirdNode = nullptr;
+    SinglyLinkedList<short> numbers;
 
-    // Allocate Nodes in the Heap
-    firstNode = new Node<short>();
-    secondNode = new Node<short>();
-    thirdNode = new Node<short>();
+    auto *firstNode = new Node<short>(
+             11
+         ),
+         *secondNode = new Node<short>(
+             22
+         ),
+         *thirdNode = new Node<short>(
+             33
+         );
 
-    // Assign Values
-    firstNode->setValue(
-        10
+    numbers.insertFirst(
+        firstNode
     );
-    secondNode->setValue(
-        20
-    );
-    thirdNode->setValue(
-        30
-    );
-
-    // Connect Nodes
-    firstNode->setNext(
+    numbers.insertFirst(
         secondNode
     );
-    secondNode->setNext(
+    numbers.insertFirst(
         thirdNode
     );
-    head = firstNode;
 
-    // Print Values
-    printValues(
-        head
-    );
+    numbers.printValues();
 
-    // Clean up
-    delete thirdNode;
-    delete secondNode;
     delete firstNode;
+    delete secondNode;
+    delete thirdNode;
 }
