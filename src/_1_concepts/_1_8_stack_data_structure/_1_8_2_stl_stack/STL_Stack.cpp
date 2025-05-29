@@ -22,6 +22,16 @@ void addNumbers(
     );
 }
 
+void printNumbers(
+    stack<short> numbers
+) {
+    cout << "Numbers are: ";
+    while (!numbers.empty()) {
+        cout << numbers.top() << ' ';
+        numbers.pop();
+    }
+}
+
 int main() {
     stack<short> numbers;
 
@@ -29,11 +39,9 @@ int main() {
         numbers
     );
 
-    cout << "Count of Numbers = " << numbers.size() << endl;
+    cout << "Count of Numbers: " << numbers.size() << endl;
 
-    cout << "Numbers are : ";
-    while (!numbers.empty()) {
-        cout << numbers.top() << ' ';
-        numbers.pop();
-    }
+    printNumbers(
+        numbers
+    );
 }
