@@ -22,3 +22,4 @@
     9. Vector Data Structure
     10. Queue Data Structure
         1. What is Queue Data Structure?
+        2. [STL: Queue](src/_1_concepts/_1_10_queue_data_structure/_1_10_2_stl_queue)
