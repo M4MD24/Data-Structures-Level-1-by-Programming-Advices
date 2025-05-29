@@ -40,6 +40,27 @@ public:
         cout << endl;
     }
 
+    void insertAfter(
+        Node<type> *previousNode,
+        Node<type> *node
+    ) {
+        if (
+            Node<type> *nodeFound = findNode(
+                previousNode
+            );
+            nodeFound == nullptr || node == nullptr
+        )
+            cout << "Can't Insert After." << endl;
+        else {
+            node->setNext(
+                previousNode->getNext()
+            );
+            previousNode->setNext(
+                node
+            );
+        }
+    }
+
     void insertLast(
         Node<type> *node
     ) {
@@ -49,7 +70,9 @@ public:
             Node<type> *current = head;
             while (current->getNext() != nullptr)
                 current = current->getNext();
-            current->setNext(node);
+            current->setNext(
+                node
+            );
         }
     }
 };

@@ -59,13 +59,25 @@ int main() {
 
     numbers.printValues();
 
-    cout << "\n■ After Insert First Found Node" << endl;
+    cout << "\n■ After Insert Last Node" << endl;
 
     auto *sixthNode = new Node<short>(
         666
     );
     numbers.insertLast(
         sixthNode
+    );
+
+    numbers.printValues();
+
+    cout << "\n■ After Insert After Node" << endl;
+
+    auto *seventhNode = new Node<short>(
+        77
+    );
+    numbers.insertAfter(
+        fourthNode,
+        seventhNode
     );
 
     numbers.printValues();
@@ -77,4 +89,5 @@ int main() {
     delete nodeFound;
     delete copyOfNodeFound;
     delete sixthNode;
+    delete seventhNode;
 }

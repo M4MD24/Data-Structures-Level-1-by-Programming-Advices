@@ -29,4 +29,5 @@
         2. Singly Linked List Implementation
         3. Insert At Beginning
         4. Find Node
+        5. Insert After
         6. Insert At End
