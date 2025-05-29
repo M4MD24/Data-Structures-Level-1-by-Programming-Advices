@@ -39,4 +39,17 @@ public:
 
         cout << endl;
     }
+
+    void insertLast(
+        Node<type> *node
+    ) {
+        if (head == nullptr)
+            head = node;
+        else {
+            Node<type> *current = head;
+            while (current->getNext() != nullptr)
+                current = current->getNext();
+            current->setNext(node);
+        }
+    }
 };

@@ -6,6 +6,8 @@ using namespace std;
 int main() {
     SinglyLinkedList<short> numbers;
 
+    cout << "■ After Insert First Nodes" << endl;
+
     auto *firstNode = new Node<short>(
              11
          ),
@@ -44,7 +46,9 @@ int main() {
         fourthNode
     );
 
-    cout << "Node Found = " << nodeFound->getValue() << endl;
+    cout << "\n■ Node Found = " << nodeFound->getValue() << endl;
+
+    cout << "\n■ After Insert First Found Node" << endl;
 
     auto *copyOfNodeFound = new Node(
         nodeFound->getValue()
@@ -55,10 +59,22 @@ int main() {
 
     numbers.printValues();
 
+    cout << "\n■ After Insert First Found Node" << endl;
+
+    auto *sixthNode = new Node<short>(
+        666
+    );
+    numbers.insertLast(
+        sixthNode
+    );
+
+    numbers.printValues();
+
     delete firstNode;
     delete secondNode;
     delete thirdNode;
     delete fifthNode;
     delete nodeFound;
     delete copyOfNodeFound;
+    delete sixthNode;
 }
