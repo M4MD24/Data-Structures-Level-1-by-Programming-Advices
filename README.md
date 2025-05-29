@@ -10,4 +10,5 @@
         3. Big O(1): Constant Time Function
         4. Big O(n): Linear Time Function
         5. Big O(n^2): Quadratic Time Function
-        6. Big O Comparison and Conclusion
+        6. Big O(Log n): Logarithmic Time Function
+        7. Big O Comparison and Conclusion
