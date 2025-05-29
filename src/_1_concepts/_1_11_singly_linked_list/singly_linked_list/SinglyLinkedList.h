@@ -110,4 +110,24 @@ public:
         else
             head = head->getNext();
     }
+
+    void deleteLast() {
+        if (head == nullptr) {
+            cout << "Can't Delete Last. List is Empty." << endl;
+            return;
+        }
+
+        if (head->getNext() == nullptr) {
+            head = nullptr;
+            return;
+        }
+
+        Node<type> *current = head;
+        while (current->getNext()->getNext() != nullptr)
+            current = current->getNext();
+
+        current->setNext(
+            nullptr
+        );
+    }
 };
