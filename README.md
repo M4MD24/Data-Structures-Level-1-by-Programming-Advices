@@ -31,3 +31,4 @@
         4. Find Node
         5. Insert After
         6. Insert At End
+        7. Delete Node
