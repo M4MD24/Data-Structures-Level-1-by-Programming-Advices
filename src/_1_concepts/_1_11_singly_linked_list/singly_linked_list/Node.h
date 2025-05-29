@@ -6,6 +6,8 @@ class Node {
     Node *next = nullptr;
 
 public:
+    Node() {}
+
     Node(
         const type &VALUE
     ) {

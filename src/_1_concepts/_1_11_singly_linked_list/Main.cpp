@@ -14,6 +14,12 @@ int main() {
          ),
          *thirdNode = new Node<short>(
              33
+         ),
+         *fourthNode = new Node<short>(
+             44
+         ),
+         *fifthNode = new Node<short>(
+             55
          );
 
     numbers.insertFirst(
@@ -25,10 +31,34 @@ int main() {
     numbers.insertFirst(
         thirdNode
     );
+    numbers.insertFirst(
+        fourthNode
+    );
+    numbers.insertFirst(
+        fifthNode
+    );
+
+    numbers.printValues();
+
+    auto *nodeFound = numbers.findNode(
+        fourthNode
+    );
+
+    cout << "Node Found = " << nodeFound->getValue() << endl;
+
+    auto *copyOfNodeFound = new Node(
+        nodeFound->getValue()
+    );
+    numbers.insertFirst(
+        copyOfNodeFound
+    );
 
     numbers.printValues();
 
     delete firstNode;
     delete secondNode;
     delete thirdNode;
+    delete fifthNode;
+    delete nodeFound;
+    delete copyOfNodeFound;
 }

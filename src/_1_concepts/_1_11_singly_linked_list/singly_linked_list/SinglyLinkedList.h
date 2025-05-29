@@ -16,6 +16,18 @@ public:
         head = node;
     }
 
+    Node<type> *findNode(
+        Node<type> *targetNode
+    ) {
+        Node<type> *current = head;
+        while (current != nullptr) {
+            if (current == targetNode)
+                return current;
+            current = current->getNext();
+        }
+        return nullptr;
+    }
+
     void printValues() {
         cout << "Nodes Values: ";
 
