@@ -19,3 +19,4 @@
         1. What is Stack Data Structure?
         2. [STL: Stack](src/_1_concepts/_1_8_stack_data_structure/_1_8_2_stl_stack)
         3. [Stack Swap](src/_1_concepts/_1_8_stack_data_structure/_1_8_3_stack_swap)
+    9. Vector Data Structure
