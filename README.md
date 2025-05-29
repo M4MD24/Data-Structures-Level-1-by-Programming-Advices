@@ -12,3 +12,4 @@
         5. Big O(n^2): Quadratic Time Function
         6. Big O(Log n): Logarithmic Time Function
         7. Big O Comparison and Conclusion
+    5. [Binary Data Structure](src/_1_concepts/_1_5_binary_data_structure/BinaryDataStructure.cpp)
