@@ -90,6 +90,12 @@ int main() {
 
     numbers.printValues();
 
+    cout << "\n■ After Delete First Node" << endl;
+
+    numbers.deleteFirst();
+
+    numbers.printValues();
+
     delete firstNode;
     delete secondNode;
     delete thirdNode;

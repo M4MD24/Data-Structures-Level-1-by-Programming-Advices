@@ -32,3 +32,4 @@
         5. Insert After
         6. Insert At End
         7. Delete Node
+        8. Delete First Node

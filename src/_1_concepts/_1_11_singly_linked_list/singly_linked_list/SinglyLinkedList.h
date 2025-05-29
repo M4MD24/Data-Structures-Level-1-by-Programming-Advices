@@ -103,4 +103,11 @@ public:
         else
             cout << "Node Not Found." << endl;
     }
+
+    void deleteFirst() {
+        if (head == nullptr)
+            cout << "Can't Delete First. List is Empty." << endl;
+        else
+            head = head->getNext();
+    }
 };
