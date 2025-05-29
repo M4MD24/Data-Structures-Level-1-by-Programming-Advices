@@ -10,10 +10,14 @@ public:
     void insertFirst(
         Node<type> *node
     ) {
-        node->setNext(
-            head
-        );
-        head = node;
+        if (node == nullptr)
+            cout << "Can't Insert, Node is null." << endl;
+        else {
+            node->setNext(
+                head
+            );
+            head = node;
+        }
     }
 
     Node<type> *findNode(
@@ -30,13 +34,11 @@ public:
 
     void printValues() {
         cout << "Nodes Values: ";
-
         Node<type> *current = head;
         while (current != nullptr) {
             cout << current->getValue() << ' ';
             current = current->getNext();
         }
-
         cout << endl;
     }
 
@@ -45,25 +47,37 @@ public:
         Node<type> *node
     ) {
         if (
-            Node<type> *nodeFound = findNode(
-                previousNode
-            );
-            nodeFound == nullptr || node == nullptr
-        )
-            cout << "Can't Insert After." << endl;
-        else {
-            node->setNext(
-                previousNode->getNext()
-            );
-            previousNode->setNext(
-                node
-            );
+            previousNode == nullptr ||
+            node == nullptr
+        ) {
+            cout << "Can't Insert After, Null pointer detected." << endl;
+            return;
         }
+
+        Node<type> *nodeFound = findNode(
+            previousNode
+        );
+        if (nodeFound == nullptr) {
+            cout << "Can't Insert After, Previous node not found." << endl;
+            return;
+        }
+
+        node->setNext(
+            previousNode->getNext()
+        );
+        previousNode->setNext(
+            node
+        );
     }
 
     void insertLast(
         Node<type> *node
     ) {
+        if (node == nullptr) {
+            cout << "Can't Insert Last, Node is null." << endl;
+            return;
+        }
+
         if (head == nullptr)
             head = node;
         else {
@@ -79,8 +93,11 @@ public:
     void deleteNode(
         Node<type> *targetNode
     ) {
-        if (head == nullptr || targetNode == nullptr) {
-            cout << "Can't Delete." << endl;
+        if (
+            head == nullptr ||
+            targetNode == nullptr
+        ) {
+            cout << "Can't Delete, List is empty or target node is null." << endl;
             return;
         }
 
@@ -106,14 +123,14 @@ public:
 
     void deleteFirst() {
         if (head == nullptr)
-            cout << "Can't Delete First. List is Empty." << endl;
+            cout << "Can't Delete First, List is Empty." << endl;
         else
             head = head->getNext();
     }
 
     void deleteLast() {
         if (head == nullptr) {
-            cout << "Can't Delete Last. List is Empty." << endl;
+            cout << "Can't Delete Last, List is Empty." << endl;
             return;
         }
 
