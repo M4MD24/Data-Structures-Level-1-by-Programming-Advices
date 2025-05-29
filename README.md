@@ -9,3 +9,4 @@
         2. Time & Space Complexity - Big O Notation
         3. Big O(1): Constant Time Function
         4. Big O(n): Linear Time Function
+        5. Big O(n^2): Quadratic Time Function
