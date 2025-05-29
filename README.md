@@ -7,3 +7,4 @@
     4. Time & Space Complexity - Big O Notation - Part 1
         1. Things Affect Program Speed & Efficiency
         2. Time & Space Complexity - Big O Notation
+        3. Big O(1): Constant Time Function
