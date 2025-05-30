@@ -115,4 +115,40 @@ public:
             );
         }
     }
+
+    void deleteNode(
+        Node<type> *targetNode
+    ) {
+        if (
+            head == nullptr ||
+            targetNode == nullptr
+        ) {
+            cout << "Can't Delete." << endl;
+            return;
+        }
+
+        if (head == targetNode) {
+            head = head->getNext();
+            if (head != nullptr)
+                head->setPrevious(
+                    nullptr
+                );
+            return;
+        }
+
+        if (
+            targetNode->getPrevious() == nullptr &&
+            targetNode->getNext() == nullptr
+        )
+            cout << "Node Not Found." << endl;
+        else {
+            targetNode->getPrevious()->setNext(
+                targetNode->getNext()
+            );
+
+            targetNode->getNext()->setPrevious(
+                targetNode->getPrevious()
+            );
+        }
+    }
 };
