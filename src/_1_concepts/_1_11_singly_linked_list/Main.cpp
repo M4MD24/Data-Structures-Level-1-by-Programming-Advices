@@ -42,11 +42,13 @@ int main() {
 
     numbers.printValues();
 
+    cout << "\n■ Node Found = ";
+
     auto *nodeFound = numbers.findNode(
         fourthNode
     );
 
-    cout << "\n■ Node Found = " << nodeFound->getValue() << endl;
+    cout << nodeFound->getValue() << endl;
 
     cout << "\n■ After Insert First Found Node" << endl;
 
