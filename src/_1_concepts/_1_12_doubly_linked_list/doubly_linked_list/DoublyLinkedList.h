@@ -85,4 +85,34 @@ public:
             );
         }
     }
+
+    void insertLast(
+        Node<type> *node
+    ) {
+        if (node == nullptr) {
+            cout << "Can't Insert Last." << endl;
+            return;
+        }
+
+        node->setNext(
+            nullptr
+        );
+
+        if (head == nullptr) {
+            node->setPrevious(
+                nullptr
+            );
+            head = node;
+        } else {
+            Node<type> *current = head;
+            while (current->getNext() != nullptr)
+                current = current->getNext();
+            node->setPrevious(
+                current
+            );
+            current->setNext(
+                node
+            );
+        }
+    }
 };
