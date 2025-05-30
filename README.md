@@ -34,3 +34,5 @@
         7. Delete Node
         8. Delete First Node
         9. Delete Last Node
+    12. Doubly Linked List
+        1. What is Doubly Linked List?
