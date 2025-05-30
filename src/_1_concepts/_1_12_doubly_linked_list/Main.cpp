@@ -1,81 +1,50 @@
 #include <iostream>
-
 #include "doubly_linked_list//Node.h"
+#include "doubly_linked_list/DoublyLinkedList.h"
 using namespace std;
 
-void printNumbers(
-    Node<short> *head
-) {
-    cout << "Numbers: ";
-    while (head != nullptr) {
-        cout << head->getValue() << ' ';
-        head = head->getNext();
-    }
-}
-
-void printNumbersBackward(
-    Node<short> *head
-) {
-    cout << "Numbers Backward: ";
-    while (head && head->getNext())
-        head = head->getNext();
-
-    while (head != nullptr) {
-        cout << head->getValue() << ' ';
-        head = head->getPrevious();
-    }
-}
-
 int main() {
-    Node<short> *head = nullptr,
-                *firstNode = nullptr,
-                *secondNode = nullptr,
-                *thirdNode = nullptr;
+    DoublyLinkedList<short> numbers;
 
-    firstNode = new Node<short>(
-        100
-    );
-    secondNode = new Node<short>(
-        200
-    );
-    thirdNode = new Node<short>(
-        300
-    );
+    cout << "■ After Insert First Nodes" << endl;
 
-    firstNode->setPrevious(
-        nullptr
-    );
-    firstNode->setNext(
-        secondNode
-    );
+    auto *firstNode = new Node<short>(
+             11
+         ),
+         *secondNode = new Node<short>(
+             22
+         ),
+         *thirdNode = new Node<short>(
+             33
+         ),
+         *fourthNode = new Node<short>(
+             44
+         ),
+         *fifthNode = new Node<short>(
+             55
+         );
 
-    secondNode->setPrevious(
+    numbers.insertFirst(
         firstNode
     );
-    secondNode->setNext(
-        thirdNode
-    );
-
-    thirdNode->setPrevious(
+    numbers.insertFirst(
         secondNode
     );
-    thirdNode->setNext(
-        nullptr
+    numbers.insertFirst(
+        thirdNode
+    );
+    numbers.insertFirst(
+        fourthNode
+    );
+    numbers.insertFirst(
+        fifthNode
     );
 
-    head = firstNode;
+    numbers.printValues();
 
-    printNumbers(
-        head
-    );
-
-    cout << endl;
-
-    printNumbersBackward(
-        head
-    );
-
-    delete head;
+    delete firstNode;
     delete secondNode;
     delete thirdNode;
+    delete fourthNode;
+    delete fifthNode;
 }
