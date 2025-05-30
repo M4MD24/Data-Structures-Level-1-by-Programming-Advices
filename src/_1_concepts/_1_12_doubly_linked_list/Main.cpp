@@ -103,13 +103,4 @@ int main() {
     numbers.deleteLast();
 
     numbers.printValues();
-
-    delete firstNode;
-    delete secondNode;
-    delete thirdNode;
-    delete fifthNode;
-    delete nodeFound;
-    delete copyOfNodeFound;
-    delete sixthNode;
-    delete seventhNode;
 }

@@ -199,6 +199,5 @@ public:
             nullptr
         );
 
-        delete current;
     }
 };
