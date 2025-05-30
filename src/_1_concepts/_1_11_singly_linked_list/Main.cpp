@@ -61,17 +61,6 @@ int main() {
 
     numbers.printValues();
 
-    cout << "\n■ After Insert Last Node" << endl;
-
-    auto *sixthNode = new Node<short>(
-        666
-    );
-    numbers.insertLast(
-        sixthNode
-    );
-
-    numbers.printValues();
-
     cout << "\n■ After Insert After Node" << endl;
 
     auto *seventhNode = new Node<short>(
@@ -80,6 +69,17 @@ int main() {
     numbers.insertAfter(
         fourthNode,
         seventhNode
+    );
+
+    numbers.printValues();
+
+    cout << "\n■ After Insert Last Node" << endl;
+
+    auto *sixthNode = new Node<short>(
+        666
+    );
+    numbers.insertLast(
+        sixthNode
     );
 
     numbers.printValues();
