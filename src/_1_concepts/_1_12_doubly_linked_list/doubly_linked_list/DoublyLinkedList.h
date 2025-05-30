@@ -158,13 +158,39 @@ public:
             return;
         }
 
+        Node<type> *copyOfHead = head;
+        head = head->getNext();
+
+        if (head != nullptr)
+            head->setPrevious(
+                nullptr
+            );
+
+        if (copyOfHead != nullptr)
+            copyOfHead->setNext(
+                nullptr
+            );
+    }
+
+    void deleteLast() {
+        if (head == nullptr) {
+            cout << "Can't Delete Last. List is Empty." << endl;
+            return;
+        }
+
         if (head->getNext() == nullptr) {
             head = nullptr;
             return;
         }
 
-        head = head->getNext();
-        head->setPrevious(
+        Node<type> *current = head;
+        while (current->getNext()->getNext() != nullptr)
+            current = current->getNext();
+
+        current->getNext()->setPrevious(
+            nullptr
+        );
+        current->setNext(
             nullptr
         );
     }

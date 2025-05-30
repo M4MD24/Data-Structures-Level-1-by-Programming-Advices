@@ -98,6 +98,12 @@ int main() {
 
     numbers.printValues();
 
+    cout << "\n■ After Delete Last Node" << endl;
+
+    numbers.deleteLast();
+
+    numbers.printValues();
+
     delete firstNode;
     delete secondNode;
     delete thirdNode;
