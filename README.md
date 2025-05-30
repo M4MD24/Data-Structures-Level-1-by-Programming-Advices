@@ -38,3 +38,4 @@
         1. What is Doubly Linked List?
         2. Doubly Linked List Implementation
         3. Insert At Beginning
+        4. Find Node

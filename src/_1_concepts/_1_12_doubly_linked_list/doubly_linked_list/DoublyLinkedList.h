@@ -28,6 +28,7 @@ public:
             cout << current->getValue() << ' ';
             current = current->getNext();
         }
+        cout << endl;
     }
 
     void printValuesBackward() {
@@ -40,6 +41,48 @@ public:
         while (current != nullptr) {
             cout << current->getValue() << ' ';
             current = current->getPrevious();
+        }
+    }
+
+    Node<type> *findNode(
+        Node<type> *targetNode
+    ) {
+        Node<type> *current = head;
+        while (current != nullptr) {
+            if (current == targetNode)
+                return current;
+            current = current->getNext();
+        }
+        return nullptr;
+    }
+
+    void insertAfter(
+        Node<type> *previousNode,
+        Node<type> *node
+    ) {
+        if (
+            Node<type> *nodeFound = findNode(
+                previousNode
+            );
+            nodeFound == nullptr || node == nullptr
+        )
+            cout << "Can't Insert After." << endl;
+        else {
+            node->setNext(
+                nodeFound->getNext()
+            );
+            node->setPrevious(
+                nodeFound
+            );
+
+            if (nodeFound->getNext() != nullptr)
+                nodeFound->getNext()->setPrevious(
+                    node
+                );
+
+            nodeFound->setNext(
+                node
+            );
         }
     }
 };

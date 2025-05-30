@@ -42,9 +42,29 @@ int main() {
 
     numbers.printValues();
 
+    cout << "\n■ Node Found = ";
+
+    auto *nodeFound = numbers.findNode(
+        fourthNode
+    );
+
+    cout << nodeFound->getValue() << endl;
+
+    cout << "\n■ After Insert First Found Node" << endl;
+
+    auto *copyOfNodeFound = new Node(
+        nodeFound->getValue()
+    );
+    numbers.insertFirst(
+        copyOfNodeFound
+    );
+
+    numbers.printValues();
+
     delete firstNode;
     delete secondNode;
     delete thirdNode;
-    delete fourthNode;
     delete fifthNode;
+    delete nodeFound;
+    delete copyOfNodeFound;
 }
