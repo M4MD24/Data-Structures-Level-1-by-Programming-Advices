@@ -34,3 +34,13 @@
         7. Delete Node
         8. Delete First Node
         9. Delete Last Node
+    12. [Doubly Linked List](src/_1_concepts/_1_12_doubly_linked_list)
+        1. What is Doubly Linked List?
+        2. Doubly Linked List Implementation
+        3. Insert At Beginning
+        4. Find Node
+        5. Insert After
+        6. Insert at End
+        7. Delete Node
+        8. Delete First Node
+        9. Delete Last Node
