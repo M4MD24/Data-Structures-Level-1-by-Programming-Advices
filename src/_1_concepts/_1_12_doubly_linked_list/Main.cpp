@@ -61,6 +61,18 @@ int main() {
 
     numbers.printValues();
 
+    cout << "\n■ After Insert After Node" << endl;
+
+    auto *seventhNode = new Node<short>(
+        77
+    );
+    numbers.insertAfter(
+        fourthNode,
+        seventhNode
+    );
+
+    numbers.printValues();
+
     delete firstNode;
     delete secondNode;
     delete thirdNode;
