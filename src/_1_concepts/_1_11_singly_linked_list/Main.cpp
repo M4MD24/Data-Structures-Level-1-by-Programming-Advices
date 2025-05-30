@@ -63,23 +63,23 @@ int main() {
 
     cout << "\n■ After Insert After Node" << endl;
 
-    auto *seventhNode = new Node<short>(
-        77
+    auto *sixthNode = new Node<short>(
+        66
     );
     numbers.insertAfter(
         fourthNode,
-        seventhNode
+        sixthNode
     );
 
     numbers.printValues();
 
     cout << "\n■ After Insert Last Node" << endl;
 
-    auto *sixthNode = new Node<short>(
-        666
+    auto *seventhNode = new Node<short>(
+        777
     );
     numbers.insertLast(
-        sixthNode
+        seventhNode
     );
 
     numbers.printValues();
