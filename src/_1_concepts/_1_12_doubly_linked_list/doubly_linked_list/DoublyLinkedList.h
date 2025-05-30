@@ -133,6 +133,8 @@ public:
                 head->setPrevious(
                     nullptr
                 );
+
+            delete targetNode;
             return;
         }
 
@@ -149,6 +151,8 @@ public:
             targetNode->getNext()->setPrevious(
                 targetNode->getPrevious()
             );
+
+            delete targetNode;
         }
     }
 
@@ -170,6 +174,8 @@ public:
             copyOfHead->setNext(
                 nullptr
             );
+
+        delete copyOfHead;
     }
 
     void deleteLast() {
@@ -179,6 +185,7 @@ public:
         }
 
         if (head->getNext() == nullptr) {
+            delete head;
             head = nullptr;
             return;
         }
@@ -187,11 +194,11 @@ public:
         while (current->getNext()->getNext() != nullptr)
             current = current->getNext();
 
-        current->getNext()->setPrevious(
-            nullptr
-        );
+        delete current->getNext();
         current->setNext(
             nullptr
         );
+
+        delete current;
     }
 };

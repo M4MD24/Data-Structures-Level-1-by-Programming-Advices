@@ -102,7 +102,9 @@ public:
         }
 
         if (head == targetNode) {
+            const Node<type> *TO_DELETE = head;
             head = head->getNext();
+            delete TO_DELETE;
             return;
         }
 
@@ -113,19 +115,24 @@ public:
         )
             current = current->getNext();
 
-        if (current->getNext() == targetNode)
+        if (current->getNext() == targetNode) {
+            Node<type> *toDelete = current->getNext();
             current->setNext(
-                targetNode->getNext()
+                toDelete->getNext()
             );
-        else
+            delete toDelete;
+        } else
             cout << "Node Not Found." << endl;
     }
 
     void deleteFirst() {
         if (head == nullptr)
             cout << "Can't Delete First, List is Empty." << endl;
-        else
+        else {
+            const Node<type> *TO_DELETE = head;
             head = head->getNext();
+            delete TO_DELETE;
+        }
     }
 
     void deleteLast() {
@@ -135,6 +142,7 @@ public:
         }
 
         if (head->getNext() == nullptr) {
+            delete head;
             head = nullptr;
             return;
         }
@@ -143,6 +151,7 @@ public:
         while (current->getNext()->getNext() != nullptr)
             current = current->getNext();
 
+        delete current->getNext();
         current->setNext(
             nullptr
         );
