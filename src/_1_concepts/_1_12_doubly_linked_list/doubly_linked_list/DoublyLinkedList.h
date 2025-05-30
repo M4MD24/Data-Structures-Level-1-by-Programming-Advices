@@ -151,4 +151,21 @@ public:
             );
         }
     }
+
+    void deleteFirst() {
+        if (head == nullptr) {
+            cout << "Can't Delete First." << endl;
+            return;
+        }
+
+        if (head->getNext() == nullptr) {
+            head = nullptr;
+            return;
+        }
+
+        head = head->getNext();
+        head->setPrevious(
+            nullptr
+        );
+    }
 };
